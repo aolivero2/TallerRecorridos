@@ -21,6 +21,11 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        JButton botonesH[]={cmdCrear,cmdLimpiar};
+        JButton botonesD[]={cmdLlenadoManual,cmdOperacion,cmdLlenadoAutomatico};
+        
+        Helper.habilitarBotones(botonesH);
+        Helper.deshabilitarBotones(botonesD);
     }
 
     /**
@@ -203,12 +208,18 @@ public class Principal extends javax.swing.JFrame {
               tblTablaInicial.setValueAt(n,i,j);  
             }
         }
+        
+        JButton botonesH[]={cmdOperacion,cmdLimpiar};
+        JButton botonesD[]={cmdCrear,cmdLlenadoAutomatico,cmdLlenadoManual};
+        
+        Helper.habilitarBotones(botonesH);
+        Helper.deshabilitarBotones(botonesD);
        
     }//GEN-LAST:event_cmdLlenadoAutomaticoActionPerformed
 
     private void cmdCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCrearActionPerformed
        int nf,nc;
-        DefaultTableModel tm,tm2;
+        DefaultTableModel tm;
         
         if (txtFilas.getText().trim().isEmpty()){
            txtFilas.requestFocusInWindow();
@@ -220,11 +231,47 @@ public class Principal extends javax.swing.JFrame {
         }else {
             nf=Integer.parseInt(txtFilas.getText());
             nc=Integer.parseInt(txtColumnas.getText());
-            
+         if (nc != nf) {
+            Helper.mensaje(this, "Digite el mismo numero de filas y columnas", 2);
+            txtFilas.setText("");
+            txtColumnas.setText("");
+            txtFilas.requestFocusInWindow();
+        }else if (nf%2==0){
+          Helper.mensaje(this, "Por favor, digite un numero impar", 2);
+          txtFilas.setText("");
+          txtColumnas.setText("");
+          txtFilas.requestFocusInWindow();
+          
+        } else if (nc%2==0){
+          Helper.mensaje(this, "Por favor, digite un numero impar", 2);
+          txtFilas.setText("");
+          txtColumnas.setText("");
+          txtFilas.requestFocusInWindow();
+        } else if (nf == 0) {
+            Helper.mensaje(this, "Por favor, digite un numero diferente", 3);
+            txtFilas.requestFocusInWindow();
+            txtFilas.selectAll();
+        } else if (nc == 0) {
+            Helper.mensaje(this, "Por favor, digite un numero diferente", 3);
+            txtColumnas.selectAll();
+       } else if (nf>=20 && nc>=20){
+          Helper.mensaje(this, "Por favor, digite un numero menor que 20", 2);
+          txtFilas.setText("");
+          txtColumnas.setText("");
+          txtFilas.requestFocusInWindow();  
+        } else {   
          tm = (DefaultTableModel) tblTablaInicial.getModel();
          tm.setRowCount(nf);
          tm.setColumnCount(nc);
+         
+        JButton botonesH[] = {cmdLlenadoAutomatico, cmdLlenadoManual, cmdLimpiar};
+        JButton botonesD[] = {cmdCrear, cmdOperacion};
+
+            Helper.habilitarBotones(botonesH);
+            Helper.deshabilitarBotones(botonesD);
         }
+      }
+         
     }//GEN-LAST:event_cmdCrearActionPerformed
 
     private void cmdLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLimpiarActionPerformed
@@ -243,6 +290,12 @@ public class Principal extends javax.swing.JFrame {
       
        tm.setRowCount(0);
        tm.setColumnCount(0);
+       
+        JButton botonesH[]={cmdCrear,cmdLimpiar};
+        JButton botonesD[]={cmdLlenadoManual,cmdOperacion,cmdLlenadoAutomatico};
+        
+        Helper.habilitarBotones(botonesH);
+        Helper.deshabilitarBotones(botonesD);
       
     }//GEN-LAST:event_cmdLimpiarActionPerformed
 
@@ -260,16 +313,20 @@ public class Principal extends javax.swing.JFrame {
             txtResultado.setText(Helper.SegundoRecorrido(tblTablaInicial));
                 break;
             case 2:
-             
-                break;
+              break;
             case 3:
              txtResultado.setText(Helper.CuartoRecorrido(tblTablaInicial));
                 break; 
              case 4:
              txtResultado.setText(Helper.QuintoRecorrido(tblTablaInicial));
-                break;
-           
-       }        
+                break; 
+       }     
+      JButton botonesH[]={cmdOperacion,cmdLimpiar};
+      JButton botonesD[]={cmdCrear,cmdLlenadoAutomatico,cmdLlenadoManual};
+        
+        Helper.habilitarBotones(botonesH);
+        Helper.deshabilitarBotones(botonesD); 
+        
     }//GEN-LAST:event_cmdOperacionActionPerformed
 
     private void cmdLlenadoManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLlenadoManualActionPerformed
@@ -308,6 +365,11 @@ public class Principal extends javax.swing.JFrame {
                 } while (sw == 0);
             }
         }
+        JButton botonesH[]={cmdOperacion,cmdLimpiar};
+        JButton botonesD[]={cmdLlenadoManual,cmdCrear,cmdLlenadoAutomatico};
+        
+        Helper.habilitarBotones(botonesH);
+        Helper.deshabilitarBotones(botonesD);
     }//GEN-LAST:event_cmdLlenadoManualActionPerformed
 
     private void txtFilasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFilasKeyTyped
