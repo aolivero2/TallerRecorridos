@@ -254,8 +254,8 @@ public class Principal extends javax.swing.JFrame {
         } else if (nc == 0) {
             Helper.mensaje(this, "Por favor, digite un numero diferente", 3);
             txtColumnas.selectAll();
-       } else if (nf>=20 && nc>=20){
-          Helper.mensaje(this, "Por favor, digite un numero menor que 20", 2);
+       } else if (nf>=19 && nc>=19){
+          Helper.mensaje(this, "Por favor, digite un numero menor", 2);
           txtFilas.setText("");
           txtColumnas.setText("");
           txtFilas.requestFocusInWindow();  
