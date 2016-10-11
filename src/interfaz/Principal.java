@@ -48,23 +48,22 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTablaInicial = new javax.swing.JTable();
         cmbOperaciones = new javax.swing.JComboBox();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tblTablaResultado = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtResultado = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel2.setBackground(new java.awt.Color(204, 153, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 153), 3));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 51, 0));
+        jLabel1.setFont(new java.awt.Font("Rockwell", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 102));
         jLabel1.setText("RECORRIDOS");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 180, 30));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 260, 30));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos iniciales:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 1, 14))); // NOI18N
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -88,11 +87,11 @@ public class Principal extends javax.swing.JFrame {
                 txtColumnasKeyTyped(evt);
             }
         });
-        jPanel1.add(txtColumnas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 50, 30));
+        jPanel1.add(txtColumnas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 60, 30));
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 280, 120));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 280, 130));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 1, 14))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -112,7 +111,7 @@ public class Principal extends javax.swing.JFrame {
                 cmdLlenadoAutomaticoActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdLlenadoAutomatico, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 160, 30));
+        jPanel3.add(cmdLlenadoAutomatico, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 160, 40));
 
         cmdLlenadoManual.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cmdLlenadoManual.setText("Llenado Manual");
@@ -121,7 +120,7 @@ public class Principal extends javax.swing.JFrame {
                 cmdLlenadoManualActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdLlenadoManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 130, 30));
+        jPanel3.add(cmdLlenadoManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 140, 40));
 
         cmdOperacion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cmdOperacion.setText("Operacion");
@@ -141,8 +140,9 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel3.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 90, 30));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 400, 120));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 360, 130));
 
+        tblTablaInicial.setBackground(new java.awt.Color(255, 255, 204));
         tblTablaInicial.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -153,25 +153,14 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblTablaInicial);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 430, 330));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 430, 330));
 
-        cmbOperaciones.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cmbOperaciones.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        cmbOperaciones.setForeground(new java.awt.Color(102, 0, 102));
         cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Recorrido 1", "Recorrido 2", "Recorrido 3", "Recorrido 4", "Recorrido 5" }));
-        jPanel2.add(cmbOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, 120, 30));
+        jPanel2.add(cmbOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, 120, 40));
 
-        tblTablaResultado.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane2.setViewportView(tblTablaResultado);
-
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 200, 450, 330));
-
-        jPanel4.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 153));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 1, 14))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -188,16 +177,15 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1068, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 949, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         pack();
@@ -234,13 +222,8 @@ public class Principal extends javax.swing.JFrame {
             nc=Integer.parseInt(txtColumnas.getText());
             
          tm = (DefaultTableModel) tblTablaInicial.getModel();
-         tm2 = (DefaultTableModel)tblTablaResultado.getModel();
-
          tm.setRowCount(nf);
          tm.setColumnCount(nc);
-
-         tm2.setRowCount(nf);
-         tm2.setColumnCount(nc);
         }
     }//GEN-LAST:event_cmdCrearActionPerformed
 
@@ -249,7 +232,7 @@ public class Principal extends javax.swing.JFrame {
        
       nc=tblTablaInicial.getColumnCount();
       nf=tblTablaInicial.getRowCount();
-      DefaultTableModel tm,tm2;
+      DefaultTableModel tm;
       
       txtFilas.setText("");
       txtColumnas.setText("");
@@ -257,21 +240,17 @@ public class Principal extends javax.swing.JFrame {
       txtResultado.setText("");
       
       tm=(DefaultTableModel) tblTablaInicial.getModel();
-      tm2=(DefaultTableModel) tblTablaResultado.getModel();
       
        tm.setRowCount(0);
        tm.setColumnCount(0);
-       
-       tm2.setRowCount(0);
-       tm2.setColumnCount(0);
-       
+      
     }//GEN-LAST:event_cmdLimpiarActionPerformed
 
     private void cmdOperacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdOperacionActionPerformed
       int nf,nc,op,aux;
       
         op = cmbOperaciones.getSelectedIndex();
-        Helper.limpiartabla(tblTablaResultado);
+        
         
       switch (op){
             case 0:
@@ -321,7 +300,7 @@ public class Principal extends javax.swing.JFrame {
                             j = nc;
                             
                             Helper.porDefectoTabla(tblTablaInicial);
-                            Helper.porDefectoTabla(tblTablaResultado);
+                            
                         } else {
                             sw = 0;
                         }
@@ -403,10 +382,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tblTablaInicial;
-    private javax.swing.JTable tblTablaResultado;
     private javax.swing.JTextField txtColumnas;
     private javax.swing.JTextField txtFilas;
     private javax.swing.JTextArea txtResultado;
